@@ -29,7 +29,8 @@ app.set("view engine", "hbs");
 app.set("views", "./views");
 
 // Sử dụng body-parser để đọc dữ liệu từ form
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // parse application/json
+app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 
 // Sử dụng các tệp tĩnh từ thư mục public (nếu có)
 app.use(express.static("public"));
